@@ -14,11 +14,12 @@ public class Ls {
     }
 
     public void execute(String dir) throws IOException, InterruptedException {
-        String output = shell.command("ls -l --time-style=long-iso " + dir);
+        String output = shell.command("ls -al --time-style=long-iso " + dir);
 
         String[] split = output.split("\n");
         //skip first header line
-        for (int i=1; i < split.length; i++) {
+        //also skip . and .. entries
+        for (int i=3; i < split.length; i++) {
             this.listings.add(LsListingEntry.createFromString(split[i]));
         }
     }

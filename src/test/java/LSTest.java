@@ -10,8 +10,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class LSTest {
-    private String oneLineOutput = "total 48\ndrwxrwxr-x 8 steve steve 4096 2021-03-03 04:49 build\n";
-    private String twoLineOutput = "total 48\ndrwxrwxr-x 8 steve steve 4096 2021-03-03 04:49 build\n-rwxrwxr-x 1 steve steve 5766 2021-03-03 04:49 gradlew\n";
+    private String oneLineOutput = "total 48\ndrwxrwxrwt 19 root  root  126976 2021-03-13 07:18 .\ndrwxr-xr-x 20 root  root    4096 2021-03-03 05:25 ..\ndrwxrwxr-x 8 steve steve 4096 2021-03-03 04:49 build\n";
+    private String twoLineOutput = "total 48\ndrwxrwxrwt 19 root  root  126976 2021-03-13 07:18 .\ndrwxr-xr-x 20 root  root    4096 2021-03-03 05:25 ..\ndrwxrwxr-x 8 steve steve 4096 2021-03-03 04:49 build\n-rwxrwxr-x 1 steve steve 5766 2021-03-03 04:49 gradlew\n";
+
 
     @Test
     public void ls_faketmp_has_atleast_1_result() throws IOException, InterruptedException {
